@@ -6,7 +6,6 @@ import { HomeScreen, ProfileScreen } from '../screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AppBar } from '../components';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabBarIcon } from '../components';
 import { Colors } from '../styles';
 
@@ -17,9 +16,9 @@ export const HomeStack = () => {
     return (
         <Stack.Navigator
             initialRouteName={'Home'}
-            screenOptions={{
-                header: (props) => <AppBar {...props} title={'Home'} />
-            }}>
+            screenOptions={({ route }) => ({
+                header: (props) => <AppBar {...props} title={route?.name} />
+            })}>
             <Stack.Screen
                 name={'Home'}
                 component={HomeScreen} />
