@@ -4,13 +4,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen, ProfileScreen } from '../screens';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AppBar } from '../components';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export const HomeStack = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            initialRouteName={'Home'}
+            screenOptions={{
+                header: (props) => <AppBar {...props} />
+            }}>
             <Stack.Screen
                 name={'Home'}
                 component={HomeScreen} />
