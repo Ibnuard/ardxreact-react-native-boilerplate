@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StatusBar } from 'react-native'
 import { PreferencesContext } from '../../context/Context'
 import { useTheme } from 'react-native-paper';
 import styles from './styles'
-import { CustomText, CustomStatusBar } from '../../components';
+import { CustomText, CustomStatusBar, Button } from '../../components';
 
 const HomeScreen = ({ navigation }) => {
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext)
@@ -19,14 +19,12 @@ const HomeScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                 <Text style={{ color: colors.text }} >Go to Profile</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => toggleTheme()}>
-                <Text style={{ color: colors.text }} >Test switch theme</Text>
-            </TouchableOpacity>
             <CustomText type={'title'} />
             <CustomText type={'subtitle'} />
             <CustomText type={'description'} />
             <CustomText type={'normal'} />
             <CustomText type={'timestamp'} />
+            <Button title={'Change Theme'} onPress={() => toggleTheme()} />
         </View>
     )
 }
