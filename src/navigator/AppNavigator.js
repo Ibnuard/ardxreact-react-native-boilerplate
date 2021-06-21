@@ -14,7 +14,7 @@ export const HomeStack = () => {
         <Stack.Navigator
             initialRouteName={'Home'}
             screenOptions={{
-                header: (props) => <AppBar {...props} />
+                header: (props) => <AppBar {...props} title={'Home'} />
             }}>
             <Stack.Screen
                 name={'Home'}

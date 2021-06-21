@@ -1,5 +1,6 @@
 import { COLOR_BLACK } from "./Colors"
 import { scaleFont } from "./Scaler"
+import { useTheme } from 'react-native-paper';
 
 // FONT SIZE
 export const FONT_SIZE_24 = scaleFont(24)
@@ -10,6 +11,7 @@ export const FONT_SIZE_12 = scaleFont(12)
 export const FONT_SIZE_10 = scaleFont(10)
 
 export const TEXT_STYLE = (size = 'normal', weight = 'normal', styles = {}) => {
+    const { colors } = useTheme();
 
     function _GET_SIZE() {
         switch (size) {
@@ -56,7 +58,7 @@ export const TEXT_STYLE = (size = 'normal', weight = 'normal', styles = {}) => {
 
     return ({
         fontSize: _GET_SIZE(),
-        color: COLOR_BLACK,
+        color: colors.text,
         fontFamily: 'Roboto-Regular',
         fontWeight: _GET_WEIGHT(),
         ...styles

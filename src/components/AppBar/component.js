@@ -1,16 +1,21 @@
 import * as React from 'react'
 import { View, Text } from 'react-native';
 import { Appbar } from 'react-native-paper'
-import { TEXT_STYLE } from '../../styles/Text';
+import { CustomText } from '..';
+import { Colors } from '../../styles';
 import styles from './styles';
+import { useTheme } from 'react-native-paper';
 
-const AppBar = ({ navigation, previous }) => {
+const AppBar = ({ navigation, previous, title }) => {
+
+    const { colors } = useTheme();
+
     return (
-        <Appbar.Header style={{ elevation: 0 }}>
+        <Appbar.Header style={styles.container}>
             {previous ? <Appbar.BackAction size={18} onPress={navigation.goBack} /> : null}
             {/*<Appbar.Content title="My awesome app" />*/}
-            <View style={{ paddingHorizontal: previous ? 0 : 14 }}>
-                <Text style={TEXT_STYLE()}>Test</Text>
+            <View style={previous ? null : styles.content}>
+                <CustomText type={'title'} text={title} style={{ color: Colors.COLOR_WHITE }} />
             </View>
         </Appbar.Header>
     );

@@ -7,5 +7,5 @@ export const COLOR_RED = '#FF6565'
 export const COLOR_GRAY = '#F5F5F5'
 export const COLOR_BLACK = '#090909'
 
-export const COLOR_DARK_GRAY = '#A9A9A9'
+export const COLOR_DARK_GRAY = '#4f4f4f'
 export const COLOR_LIGHT_GRAY = '#EDEDED'
