@@ -20,7 +20,7 @@ import { PreferencesContext } from './context/Context';
 import { DARK_THEME, LIGHT_THEME } from './styles/Theme';
 
 const CombinedDefaultTheme = merge(LIGHT_THEME, NavigationDefaultTheme);
-const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
+const CombinedDarkTheme = merge(DARK_THEME, NavigationDarkTheme);
 
 const App = () => {
 

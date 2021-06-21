@@ -18,6 +18,5 @@ export const DARK_THEME = ({
     roundness: 2,
     colors: {
         ...DarkTheme.colors,
-        text: COLOR_WHITE
     }
 })
