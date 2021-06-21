@@ -3,11 +3,13 @@ import { View, Text, TouchableOpacity, StatusBar } from 'react-native'
 import { PreferencesContext } from '../../context/Context'
 import { useTheme } from 'react-native-paper';
 import styles from './styles'
-import { CustomText, CustomStatusBar, Button } from '../../components';
+import { CustomText, CustomStatusBar, Button, Input } from '../../components';
 
 const HomeScreen = ({ navigation }) => {
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext)
     const { colors } = useTheme();
+
+    const [text, setText] = React.useState('')
 
     return (
         <View style={styles.container}>
@@ -24,6 +26,7 @@ const HomeScreen = ({ navigation }) => {
             <CustomText type={'description'} />
             <CustomText type={'normal'} />
             <CustomText type={'timestamp'} />
+            <Input value={text} onChangeText={(val) => setText(val)} />
             <Button title={'Change Theme'} onPress={() => toggleTheme()} />
         </View>
     )
